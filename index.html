@@ -5,14 +5,17 @@
 		<title>Ember Test Application</title>
 	</head>
 	<body>
-		<script type="text/x-handlebars">
+		<script type="text/x-handlebars" data-template-name="task-list">
 			<div class="navi">
+				Navigation
 				{{outlet navbar}}
 			</div>
 			<div class="left">
+				Left Box
 				{{outlet left}}
 			</div>
 			<div class="right">
+				Right Box
 				{{outlet right}}
 			</div>
 		</script>
@@ -43,4 +46,5 @@
 		<script src="js/lib/ember-data-0.13.js"></script>
 		<!-- Application scripts -->
 		<script src="js/application.js"></script>
+		<script src="js/router.js"></script>
 	</body>
