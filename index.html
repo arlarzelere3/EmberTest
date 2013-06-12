@@ -5,15 +5,42 @@
 		<title>Ember Test Application</title>
 	</head>
 	<body>
-		<header>Ember Test</header>
-		<script type="text/x-handlebars" data-template-name="data-list">
-			<div id="dataList">
-				{{outlet}}
+		<script type="text/x-handlebars">
+			<div class="navi">
+				{{outlet navbar}}
+			</div>
+			<div class="left">
+				{{outlet left}}
+			</div>
+			<div class="right">
+				{{outlet right}}
 			</div>
 		</script>
-		<footer>Footer</footer>
+		<script type="text/x-handlebars" data-template-name="navbar">
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ul>
+		</script>
+		<script type="text/x-handlebars" data-template-name="data-list">
+			<table>
+				<tr>
+					<td>Something</td>
+					<td>Another</td>
+				</tr>
+				<tr>
+					<td>2nd row</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</script>
+
+		<!-- Scripts -->
 		<script src="js/lib/jquery-1.10.1.js"></script>
 		<script src="js/lib/handlebars.js"></script>
 		<script src="js/lib/ember-1.0.0-rc.5.js"></script>
 		<script src="js/lib/ember-data-0.13.js"></script>
+		<!-- Application scripts -->
+		<script src="js/application.js"></script>
 	</body>
