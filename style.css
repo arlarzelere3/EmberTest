@@ -1,12 +1,12 @@
 .navBar
 {
-  border 1px solid #000 
+  border 1px solid red
 }
 .left
 {
-  border 1px solid #F00
+  border 1px solid green
 }
 .right
 {
-  border 1px solid #0F0
+  border 1px solid blue
 }
