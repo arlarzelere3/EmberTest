@@ -1,12 +1,16 @@
 .navBar
 {
-  border 1px solid red
+	border: 1px solid red;
 }
 .left
 {
-  border 1px solid green
+	border: 1px solid blue;
+	width: 49%;
+	float: left;
 }
 .right
 {
-  border 1px solid blue
+	border: 1px solid green;
+	width: 49%;
+	float: right;
 }

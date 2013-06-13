@@ -1,2 +1,2 @@
-window.App = Ember.Application.create();
+window.Tasks = Ember.Application.create();
 
