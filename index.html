@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
+		<script type="text/x-handlebars" data-template-name="taskList">
 			<div class="navBar">
 				Navigation
 				<ul>
@@ -15,38 +16,43 @@
 				</ul>
 			</div>
 			<div class="left">
-				Left Box
-				<table>
-					<tr>
-						<td>Something</td>
-						<td>Another</td>
-					</tr>
-					<tr>
-						<td>2nd row</td>
-						<td>yes</td>
-					</tr>
-				</table>
+				<ul id="task-list">
+					{{#each controller}}
+						<li {{bindAttr class="isCompleted:completed"}}>
+							{{view Ember.Checkbox checkedBinding="isCompleted" class="toggle"}}
+							<label>{{title}}</label>
+							<label>{{estHours}} hours</label>
+							<label>{{date}}</label><button class="destroy"></button>
+						</li>
+					{{/each}}
+				</ul>
 			</div>
 			<div class="right">
 				Right Box
-				<table>
-					<tr>
-						<td>Title</td>
-					</tr>
-					<tr>
-						<td>Label: </td>
-						<td>dataElement</td>
-					</tr>
-					<tr>
-						<td>Label2: </td>
-						<td>dataElement2</td>
-					</tr>
-				</table>
+				<ul>
+					<li>{{view Ember.TextField id="new-task" placeholder="Enter new task."
+					valueBinding="newTitle"}}</li>
+					<li>{{view Ember.TextField id="new-hours" placeholder="1"
+					valueBinding="newHours"}}
+				<ul>
+				<button id="new-task" {{action "createTask"}}>
+					Save
+				</button>
 			</div>
+		</script>
 		<!-- Scripts -->
 		<script src="js/lib/jquery-1.10.1.js"></script>
 		<script src="js/lib/handlebars.js"></script>
 		<script src="js/lib/ember-1.0.0-rc.5.js"></script>
 		<script src="js/lib/ember-data-0.13.js"></script>
+		<!-- Application Scripts -->
+		<script src="js/application.js"></script>
+		<script src="js/router.js"></script>
+		<!-- Models -->
+		<script src="js/models/task.js"></script>
+		<script src="js/models/store.js"></script>
+		<!-- Controllers -->
+		<script src="js/controllers/taskList_controller.js"></script>
+		<script src="js/controllers/task_controller"></script>
 	</body>
 </html>

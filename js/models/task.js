@@ -1,23 +1,26 @@
 TaskList.Task = DS.Model.extend({
 	title: DS.attr('string'),
 	isCompleted: DS.attr('boolean'),
-	dueDate: DS.attr('date')
+	estHours: DS.attr('number')
 });
 
 TaskList.Task.FIXTURES = [
 	{
 		id: 1,
 		title: 'Task 1',
-		dueDate: '2013-01-01'
+		estHours: '7',
+		isCompleted: true
 	},
 	{
 		id: 2,
 		title: 'Task 2',
-		dueDate: '2013-02-02'
+		estHours: '12',
+		isCompleted: false
 	},
 	{
 		id: 3,
 		title: 'Task 3',
-		dueDate: '2013-03-03'
+		estHours: '100',
+		isCompleted: false
 	}
 ]

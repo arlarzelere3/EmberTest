@@ -1,10 +1,9 @@
-App.Router.map(function(){
-	this.resource('task-list', {path: '/'});
-	this.resource('tasks')
+TaskList.Router.map(function(){
+	this.resource('taskList', { path: '/'});
 });
 
-App.TasksRoute = Ember.Route.extend({
-	renderTemplate: function() {
-		this.render(outlet: 'left');
+TaskList.TaskListRoute = Ember.Route.extend({
+	model: function() {
+		return TaskList.Task.find();
 	}
-});
+})

@@ -14,3 +14,7 @@
 	width: 49%;
 	float: right;
 }
+.completed
+{
+	text-decoration: line-through;
+}
